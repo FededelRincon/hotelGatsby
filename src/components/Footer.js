@@ -12,7 +12,10 @@ const EnlaceHome = styled(Link)`
 `;
 
 
-const Header = () => {
+const Header = ({ siteName }) => {
+
+    const year = new Date().getFullYear();
+
     return (
         <>
             <header
@@ -33,13 +36,22 @@ const Header = () => {
                         }
                     `}
                 >
+                    {/* <Navegacion /> */}
+                    <p
+                        css={css`
+                            color: #FFF;
+                            /* padding: 1rem; */
+                        `}
+                    >
+                        { siteName } . Todos los derechos Reservados { year } &copy;
+                    </p>
+
                     <EnlaceHome to="/" >
                         <h1>
                             Hotel Gatsby + GraphQL
                         </h1>
                     </EnlaceHome>
 
-                    <Navegacion />
 
                 </div>
             </header>

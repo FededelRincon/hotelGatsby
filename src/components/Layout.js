@@ -3,10 +3,18 @@ import Helmet from 'react-helmet';
 import { Global, css } from '@emotion/react';
 
 import Header from './Header';
+import Footer from './Footer';
 
 import 'normalize.css';
+import useSeo from '../hooks/use-seo';
+
 
 const Layout = (props) => {
+
+    const seo = useSeo();
+
+    const { siteName, fallbackSeo: { description }} = seo;
+    
     return (
         <>
             <Global 
@@ -44,15 +52,18 @@ const Layout = (props) => {
             />
 
             <Helmet>
-                <title>Gatsby Hotel + GraphicQL</title>
-                {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> */}
-                {/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> */}
+                <title> { siteName } </title>
+                <meta name="description" content={ description } />
                 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
             </Helmet>
 
             <Header />
+
             {props.children}
-            {/* <Footer /> */}
+
+            <Footer 
+                siteName={siteName}
+            />
         </>
     );
 }
