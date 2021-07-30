@@ -5,6 +5,7 @@ import { Link } from 'gatsby';
 
 import Navegacion from './Nav';
 
+
 const EnlaceHome = styled(Link)`
     color: #FFF;
     text-align: center;
@@ -12,7 +13,11 @@ const EnlaceHome = styled(Link)`
 `;
 
 
-const Header = () => {
+
+const Header = ({ siteName }) => {
+    
+   
+
     return (
         <>
             <header
@@ -35,7 +40,7 @@ const Header = () => {
                 >
                     <EnlaceHome to="/" >
                         <h1>
-                            Hotel Gatsby + GraphQL
+                            { siteName }
                         </h1>
                     </EnlaceHome>
 

@@ -3,7 +3,6 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Link } from 'gatsby';
 
-import Navegacion from './Nav';
 
 const EnlaceHome = styled(Link)`
     color: #FFF;
@@ -36,19 +35,17 @@ const Header = ({ siteName }) => {
                         }
                     `}
                 >
-                    {/* <Navegacion /> */}
                     <p
                         css={css`
                             color: #FFF;
-                            /* padding: 1rem; */
                         `}
                     >
-                        { siteName } . Todos los derechos Reservados { year } &copy;
+                        Todos los derechos Reservados { year } &copy;
                     </p>
 
                     <EnlaceHome to="/" >
                         <h1>
-                            Hotel Gatsby + GraphQL
+                            { siteName }
                         </h1>
                     </EnlaceHome>
 

@@ -57,7 +57,9 @@ const Layout = (props) => {
                 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
             </Helmet>
 
-            <Header />
+            <Header 
+                siteName={siteName}
+            />
 
             {props.children}
 
