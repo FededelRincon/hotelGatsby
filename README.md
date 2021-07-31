@@ -8,4 +8,8 @@
   Hotel Gatsby
 </h1>
 
+
 page made with gatsby and Dato CMS
+
+Page upload to netlify:
+https://hotel-gatsby-datocms-gatsby-fdr.netlify.app/
